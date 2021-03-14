@@ -8,7 +8,6 @@ namespace NewSqlLite
 {
     class dbConnections
     {
-        public static string source = @"C:\Users\o_hee\source\repos\NewSqlLite\NewSqlLite\bin\bandits";
-
+        public static string source = @"Data Source = C:\Users\o_hee\source\repos\NewSqlLite\NewSqlLite\bin\bandits.db";
     }
 }
