@@ -72,6 +72,7 @@
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="dbConnections.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

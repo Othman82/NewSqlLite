@@ -51,6 +51,13 @@
             // cbTitle
             // 
             this.cbTitle.FormattingEnabled = true;
+            this.cbTitle.Items.AddRange(new object[] {
+            "Mr",
+            "Miss",
+            "Mrs",
+            "Professor",
+            "Colonel",
+            "Rev"});
             this.cbTitle.Location = new System.Drawing.Point(47, 82);
             this.cbTitle.Name = "cbTitle";
             this.cbTitle.Size = new System.Drawing.Size(121, 21);

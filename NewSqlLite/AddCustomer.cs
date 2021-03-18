@@ -45,7 +45,7 @@ namespace NewSqlLite
         {
             using (SQLiteCommand cmd = conn.CreateCommand())
             {
-                cmd.CommandText = @"INSERT INTO customer(title," + "firstname," + "lastname," + "dob," + "nicode," + "email," + "password," + "allowance) VALUES (@setTitle, @setFirstname, @setLastname, @setDOB @setNIcode, @setEmail, @setPassword, @setAllowance)";
+                cmd.CommandText = @"INSERT INTO customer (title," + "firstname," + "lastname," + "dob," + "nicode," + "email," + "password," + "allowance) VALUES (@setTitle, @setFirstname, @setLastname, @setDOB, @setNIcode, @setEmail, @setPassword, @setAllowance)";
                 cmd.Parameters.AddWithValue("setTitle", cbTitle.Text);
                 cmd.Parameters.AddWithValue("setFirstname", txtFirstname.Text);
                 cmd.Parameters.AddWithValue("setLastname", txtLastname.Text);

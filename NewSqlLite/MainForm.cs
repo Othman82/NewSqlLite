@@ -39,7 +39,7 @@ namespace NewSqlLite
             catch (Exception ex)
             {
 
-                if (conn.State == System.Data.ConnectionState.Open)
+                if (conn.State == System.Data.ConnectionState.Closed)
                     conn.Close();
                 
                     tssImage.BackgroundImage = Properties.Resources.red;
@@ -77,6 +77,26 @@ namespace NewSqlLite
             AddCustomer newCust = new AddCustomer();
             newCust.Show();
             this.Hide();
+        }
+
+        private void dgv_customer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow dgvRow = dgv_customer.Rows[e.RowIndex];
+                Global.selectedCust = dgvRow.Cells[0].Value.ToString();
+                Global.selectedTitle = dgvRow.Cells[1].Value.ToString();
+                Global.selectedFirstname = dgvRow.Cells[2].Value.ToString();
+                Global.selectedLastname = dgvRow.Cells[3].Value.ToString();
+                Global.selectedDOB= dgvRow.Cells[4].Value.ToString();
+                Global.selectedNI = dgvRow.Cells[5].Value.ToString();
+                Global.selectedEmail = dgvRow.Cells[6].Value.ToString();
+                Global.selectedPassword= dgvRow.Cells[7].Value.ToString();
+                Global.selectedAllowance = dgvRow.Cells[0].Value.ToString();
+
+            }
+
+            txtCustid.Text = Global.selectedCust;
         }
     }
 }
