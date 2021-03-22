@@ -20,6 +20,7 @@ namespace NewSqlLite
         SQLiteConnection conn;
         SQLiteDataAdapter da_Customer; //to retrieve data from a data source and populate tables within a DataSet.
         DataTable dt_Customer; //The DataTable class  is a database table representing and provides a collection of columns and rows to store data in a grid for
+        SQLiteCommand cmd;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -97,6 +98,44 @@ namespace NewSqlLite
             }
 
             txtCustid.Text = Global.selectedCust;
+        }
+
+        private void btn_Update_Cust_Click(object sender, EventArgs e)
+        {
+            UpdateCustomer frm_updateCust = new UpdateCustomer();
+            frm_updateCust.Show();
+            this.Hide();
+        }
+
+        private void btn_Del_Cust_Click(object sender, EventArgs e)
+        {
+            // Ask the user for confirmation to delete data
+            DialogResult dialog = MessageBox.Show("Do you really wish to delete this record?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if(dialog == DialogResult.Yes)
+            {
+                //if yes, delete data
+                string txtQuery = "DELETE FROM customer WHERE custid = '" + this.txtCustid.Text + "';";
+                ExecuteQuery(txtQuery);
+                conn.Close();
+                MessageBox.Show("Record Deleted!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                showAllcustomer();
+            }
+            else if (dialog == DialogResult.No)
+            {
+                //Do Nothing
+                return;
+
+            }
+
+        }
+
+        private void ExecuteQuery(string txtQuery)
+        {
+            conn.Open();                       //Open connection to the database
+            cmd = conn.CreateCommand();        //Prepare conncetion for the command
+            cmd.CommandText = txtQuery;        //Prepare command
+            cmd.ExecuteNonQuery();             //Excute command
+            conn.Close();                      //Close connection to the database
         }
     }
 }

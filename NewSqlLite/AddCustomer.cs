@@ -19,9 +19,9 @@ namespace NewSqlLite
             InitializeComponent();
         }
 
-        SQLiteConnection conn;
+        SQLiteConnection conn;   // Connecting to the data base source
 
-        private void AddCustomer_Load(object sender, EventArgs e)
+        private void AddCustomer_Load(object sender, EventArgs e)  // Check connection & call the data base 
         {
             try
             {

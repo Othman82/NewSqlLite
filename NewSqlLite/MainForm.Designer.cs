@@ -65,6 +65,7 @@
             this.btn_Update_Cust.TabIndex = 2;
             this.btn_Update_Cust.Text = "Update Customer";
             this.btn_Update_Cust.UseVisualStyleBackColor = true;
+            this.btn_Update_Cust.Click += new System.EventHandler(this.btn_Update_Cust_Click);
             // 
             // btn_Del_Cust
             // 
@@ -74,6 +75,7 @@
             this.btn_Del_Cust.TabIndex = 3;
             this.btn_Del_Cust.Text = "Delete Customer";
             this.btn_Del_Cust.UseVisualStyleBackColor = true;
+            this.btn_Del_Cust.Click += new System.EventHandler(this.btn_Del_Cust_Click);
             // 
             // tssImage
             // 
