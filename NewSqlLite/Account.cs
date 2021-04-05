@@ -52,7 +52,12 @@ namespace NewSqlLite
                 conn = new SQLiteConnection(dbConnections.source); // reading the database from the source (connection)
                 string sqlcommand = @"SELECT * FROM account WHERE custid ='" + Global.selectedCust + "';";  // getting the content from the database
 
-                da_Accounts = new SQLiteDataAdapter(sqlcommand, conn); //  create new data adpater to stor the data base temperorely (using sqlcommand)                 
+
+                string sqlcommand2 = @"SELECT accid, customer.title || ' ' || customer.firstname || ' ' || customer.lastname AS Name,
+                product.isaname AS ProductName, balance, accrued, active FROM account INNER JOIN customer ON customer.custid = account.custid 
+                INNER JOIN product ON product.prodid = account.prodid WHERE customer.custid = '" + Global.selectedCust + "';";
+
+                da_Accounts = new SQLiteDataAdapter(sqlcommand2, conn); //  create new data adpater to stor the data base temperorely (using sqlcommand)
                 dt_Accounts = new DataTable(); // create new data  tables
                 da_Accounts.Fill(dt_Accounts); // use the data adpater 
                 dgv_account.DataSource = dt_Accounts;    // populate data grid view with the data from the data table 
