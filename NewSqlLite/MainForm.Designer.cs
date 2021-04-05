@@ -46,6 +46,7 @@
             this.dgv_customer.Size = new System.Drawing.Size(833, 474);
             this.dgv_customer.TabIndex = 0;
             this.dgv_customer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_customer_CellClick);
+            this.dgv_customer.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_customer_CellDoubleClick);
             // 
             // btn_AddCust
             // 

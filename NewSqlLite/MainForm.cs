@@ -18,8 +18,8 @@ namespace NewSqlLite
             InitializeComponent();
         }
         SQLiteConnection conn;
-        SQLiteDataAdapter da_Customer; //to retrieve data from a data source and populate tables within a DataSet.
-        DataTable dt_Customer; //The DataTable class  is a database table representing and provides a collection of columns and rows to store data in a grid for
+        SQLiteDataAdapter da_Customer;  // To retrieve data from a data source and populate tables within a DataSet.
+        DataTable dt_Customer;       // The DataTable class  is a database table representing and provides a collection of columns                            and rows to store data in a grid for
         SQLiteCommand cmd;
 
         private void Form1_Load(object sender, EventArgs e)
@@ -34,9 +34,9 @@ namespace NewSqlLite
                 
                     tssImage.BackgroundImage = Properties.Resources.grn;
                     tssImage.Text = "- Connected - ";
-                
 
             }
+
             catch (Exception ex)
             {
 
@@ -136,6 +136,13 @@ namespace NewSqlLite
             cmd.CommandText = txtQuery;        //Prepare command
             cmd.ExecuteNonQuery();             //Excute command
             conn.Close();                      //Close connection to the database
+        }
+
+        private void dgv_customer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Account frm_accounts = new Account();
+            frm_accounts.Show();
+            this.Hide();
         }
     }
 }
