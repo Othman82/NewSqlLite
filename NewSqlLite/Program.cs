@@ -11,12 +11,21 @@ namespace NewSqlLite
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static bool ValidLogin = false;
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+
+            Application.Run(new login());
+
+            if (ValidLogin)
+            {
+                Application.Run(new MainForm());
+            }
+           
         }
     }
 }
