@@ -65,9 +65,6 @@ namespace NewSqlLite
                 this.Hide();
 
 
-
-                    
-
             }
         }
 
@@ -79,8 +76,6 @@ namespace NewSqlLite
             frm_main.Show();
             this.Hide();
         }
-
-        
 
       
     }

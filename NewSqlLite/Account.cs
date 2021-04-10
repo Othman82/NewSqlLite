@@ -69,5 +69,12 @@ namespace NewSqlLite
 
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            MainForm frm_main = new MainForm();
+            frm_main.Show();
+            this.Hide();
+        }
     }
 }
