@@ -77,10 +77,11 @@ namespace NewSqlLite
                 string txtQuery1 = "UPDATE account SET accrued = accrued + ( balance * (SELECT intrate FROM product WHERE account.prodid = product.prodid)/365.0);";
                 MessageBox.Show("Accrued interest updated", "Accrued interest updated", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 ExecuteQuery1(txtQuery1);
-                //ShowAccounts();
+                
 
             }
-        
+       // ShowAccount();
+
 
 
     }
