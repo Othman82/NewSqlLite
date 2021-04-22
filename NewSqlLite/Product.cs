@@ -21,6 +21,7 @@ namespace NewSqlLite
         SQLiteConnection conn;   // Connecting to the data base source
         SQLiteDataAdapter da_Products;  // To retrieve data from a data source and populate tables within a DataSet.
         DataTable dt_Products;       // The DataTable class  is a database table representing and provides a collection of columns                            and rows to store data in a grid for
+        SQLiteCommand cmd;     // SQlite command to tell it to do somthing
 
         private void Product_Load(object sender, EventArgs e)
         {
@@ -41,10 +42,14 @@ namespace NewSqlLite
                 }
             }
 
-           showProducts();  // if there no errors show all products
+          ShowProduct();  // if there no errors show all products
+
         }
 
-        private void showProducts()
+
+
+
+        private void ShowProduct()
         {
             try
             {
@@ -52,7 +57,7 @@ namespace NewSqlLite
                 string sqlcommand = @"SELECT * FROM product WHERE prodid";  // getting the content from the database
 
                 da_Products = new SQLiteDataAdapter(sqlcommand, conn); //  create new data adpater to stor the data base temperorely (using sqlcommand) 
-                dt_Products  = new DataTable(); // create new data  tables
+                dt_Products = new DataTable(); // create new data  tables
                 da_Products.Fill(dt_Products); // use the data adpater 
                 dgv_product.DataSource = dt_Products;    // populate data grid view with the data from the data table 
             }
@@ -63,5 +68,50 @@ namespace NewSqlLite
 
             }
         }
+
+        private void ExcuteQuery(string txtQuery) //Custome function - saves time when openning and closing queries-
+        {
+            cmd = conn.CreateCommand();     //Prepare connection for command
+            cmd.CommandText = txtQuery;     //Prepare command
+            cmd.ExecuteNonQuery();         // Excute command
+            conn.Close();                  // Close connection
+        }
+
+        private void btnUpdatesStatus_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string txtQuery = "UPDATE product SET status ='" + this.cbStatus.Text + "' WHERE prodid ='" + this.txtProdid.Text + "';";
+            MessageBox.Show("Status Updated", "Status Updated!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            ExcuteQuery(txtQuery);
+            ShowProduct();
+            Global.selectedStatus = cbStatus.Text;
+        }
+
+        private void btnUpdateInterestRate_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            string txtQuery = "UPDATE product SET intrate ='" + this.txtIntrate.Text + "' WHERE prodid ='" + this.txtProdid.Text + "';";
+            MessageBox.Show("Interest Rate Updated", "Interest Rate Updated!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            ExcuteQuery(txtQuery);
+            ShowProduct();
+            Global.selectedIntrate = txtIntrate.Text;
+        }
+
+        private void dgv_product_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow dgvRow = dgv_product.Rows[e.RowIndex];
+                Global.selectedProd = dgvRow.Cells[0].Value.ToString();
+                Global.selectedISAName = dgvRow.Cells[1].Value.ToString();
+                Global.selectedStatus = dgvRow.Cells[2].Value.ToString();
+                Global.selectedTransin = dgvRow.Cells[3].Value.ToString();
+                Global.selectedIntrate = dgvRow.Cells[4].Value.ToString();
+            }
+
+            txtProdid.Text = Global.selectedProd;
+        }
+
+
     }
 }

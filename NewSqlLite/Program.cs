@@ -23,7 +23,7 @@ namespace NewSqlLite
 
             if (ValidLogin)
             {
-                Application.Run(new MainForm());
+                Application.Run(new Menu());
             }
            
         }

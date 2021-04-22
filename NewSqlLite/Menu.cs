@@ -17,11 +17,30 @@ namespace NewSqlLite
             InitializeComponent();
         }
 
-        private void btnCustomerTools_Click(object sender, EventArgs e)
+        private void showAllCustomersToolStripMenuItem_Click(object sender, EventArgs e) // To call MainForm 
         {
-            accruedCalculation accrued = new accruedCalculation();
-            accrued.Show();
+            MainForm frm_main = new MainForm();
+            frm_main.Show();
+            //this.Hide();
+        }
+
+        private void showAllAccountsToolStripMenuItem_Click(object sender, EventArgs e) // To Call Product form 
+        {
+            Product frm_product = new Product();
+            frm_product.Show();
+        }
+
+        private void calculateAccruedIntetrestToolStripMenuItem_Click(object sender, EventArgs e) // To call Acrrued Interest calculation form
+        {
+            accruedInterest frm_accrued = new accruedInterest();
+            frm_accrued.Show();
+        }
+
+        private void updateProductToolStripMenuItem_Click(object sender, EventArgs e) // To Call Update product Form 
+        {
+            Product frm_products = new Product();
+            frm_products.Show();
+            // this.Hide();
         }
     }
-    
 }

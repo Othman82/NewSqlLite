@@ -28,71 +28,126 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCustomerTools = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAccountTools = new System.Windows.Forms.Button();
-            this.btnProdTools = new System.Windows.Forms.Button();
-            this.btnTransaction = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showAllCustomersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showAllAccountsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculateAccruedIntetrestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showBalanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnCustomerTools
+            // menuStrip1
             // 
-            this.btnCustomerTools.Location = new System.Drawing.Point(21, 100);
-            this.btnCustomerTools.Name = "btnCustomerTools";
-            this.btnCustomerTools.Size = new System.Drawing.Size(179, 37);
-            this.btnCustomerTools.TabIndex = 0;
-            this.btnCustomerTools.Text = "Customer Tools";
-            this.btnCustomerTools.UseVisualStyleBackColor = true;
-            this.btnCustomerTools.Click += new System.EventHandler(this.btnCustomerTools_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customerToolStripMenuItem,
+            this.accountToolStripMenuItem,
+            this.productToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // label1
+            // customerToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Customers ";
+            this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showAllCustomersToolStripMenuItem,
+            this.addCustomerToolStripMenuItem,
+            this.updateCustomerToolStripMenuItem,
+            this.deleteCustomerToolStripMenuItem});
+            this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.customerToolStripMenuItem.Text = "Customer";
             // 
-            // btnAccountTools
+            // showAllCustomersToolStripMenuItem
             // 
-            this.btnAccountTools.Location = new System.Drawing.Point(229, 100);
-            this.btnAccountTools.Name = "btnAccountTools";
-            this.btnAccountTools.Size = new System.Drawing.Size(179, 37);
-            this.btnAccountTools.TabIndex = 2;
-            this.btnAccountTools.Text = "Account Tools";
-            this.btnAccountTools.UseVisualStyleBackColor = true;
+            this.showAllCustomersToolStripMenuItem.Name = "showAllCustomersToolStripMenuItem";
+            this.showAllCustomersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showAllCustomersToolStripMenuItem.Text = "Show All Customers";
+            this.showAllCustomersToolStripMenuItem.Click += new System.EventHandler(this.showAllCustomersToolStripMenuItem_Click);
             // 
-            // btnProdTools
+            // addCustomerToolStripMenuItem
             // 
-            this.btnProdTools.Location = new System.Drawing.Point(452, 100);
-            this.btnProdTools.Name = "btnProdTools";
-            this.btnProdTools.Size = new System.Drawing.Size(179, 37);
-            this.btnProdTools.TabIndex = 3;
-            this.btnProdTools.Text = "Product Tools";
-            this.btnProdTools.UseVisualStyleBackColor = true;
+            this.addCustomerToolStripMenuItem.Name = "addCustomerToolStripMenuItem";
+            this.addCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addCustomerToolStripMenuItem.Text = "Add Customer";
             // 
-            // btnTransaction
+            // updateCustomerToolStripMenuItem
             // 
-            this.btnTransaction.Location = new System.Drawing.Point(682, 100);
-            this.btnTransaction.Name = "btnTransaction";
-            this.btnTransaction.Size = new System.Drawing.Size(179, 37);
-            this.btnTransaction.TabIndex = 4;
-            this.btnTransaction.Text = "Transactions";
-            this.btnTransaction.UseVisualStyleBackColor = true;
+            this.updateCustomerToolStripMenuItem.Name = "updateCustomerToolStripMenuItem";
+            this.updateCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateCustomerToolStripMenuItem.Text = "Update Customer";
+            // 
+            // deleteCustomerToolStripMenuItem
+            // 
+            this.deleteCustomerToolStripMenuItem.Name = "deleteCustomerToolStripMenuItem";
+            this.deleteCustomerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteCustomerToolStripMenuItem.Text = "Delete Customer";
+            // 
+            // accountToolStripMenuItem
+            // 
+            this.accountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showAllAccountsToolStripMenuItem,
+            this.calculateAccruedIntetrestToolStripMenuItem,
+            this.showBalanceToolStripMenuItem});
+            this.accountToolStripMenuItem.Name = "accountToolStripMenuItem";
+            this.accountToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.accountToolStripMenuItem.Text = "Account";
+            // 
+            // showAllAccountsToolStripMenuItem
+            // 
+            this.showAllAccountsToolStripMenuItem.Name = "showAllAccountsToolStripMenuItem";
+            this.showAllAccountsToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.showAllAccountsToolStripMenuItem.Text = "Show All Accounts";
+            this.showAllAccountsToolStripMenuItem.Click += new System.EventHandler(this.showAllAccountsToolStripMenuItem_Click);
+            // 
+            // calculateAccruedIntetrestToolStripMenuItem
+            // 
+            this.calculateAccruedIntetrestToolStripMenuItem.Name = "calculateAccruedIntetrestToolStripMenuItem";
+            this.calculateAccruedIntetrestToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.calculateAccruedIntetrestToolStripMenuItem.Text = "Calculate Accrued Intetrest";
+            this.calculateAccruedIntetrestToolStripMenuItem.Click += new System.EventHandler(this.calculateAccruedIntetrestToolStripMenuItem_Click);
+            // 
+            // showBalanceToolStripMenuItem
+            // 
+            this.showBalanceToolStripMenuItem.Name = "showBalanceToolStripMenuItem";
+            this.showBalanceToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
+            this.showBalanceToolStripMenuItem.Text = "Show Balance";
+            // 
+            // productToolStripMenuItem
+            // 
+            this.productToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.updateProductToolStripMenuItem});
+            this.productToolStripMenuItem.Name = "productToolStripMenuItem";
+            this.productToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.productToolStripMenuItem.Text = "Product";
+            // 
+            // updateProductToolStripMenuItem
+            // 
+            this.updateProductToolStripMenuItem.Name = "updateProductToolStripMenuItem";
+            this.updateProductToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.updateProductToolStripMenuItem.Text = "Update Product";
+            this.updateProductToolStripMenuItem.Click += new System.EventHandler(this.updateProductToolStripMenuItem_Click);
             // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(891, 260);
-            this.Controls.Add(this.btnTransaction);
-            this.Controls.Add(this.btnProdTools);
-            this.Controls.Add(this.btnAccountTools);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCustomerTools);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.menuStrip1);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
             this.Text = "Menu";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,10 +155,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnCustomerTools;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnAccountTools;
-        private System.Windows.Forms.Button btnProdTools;
-        private System.Windows.Forms.Button btnTransaction;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showAllCustomersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem accountToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showAllAccountsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem calculateAccruedIntetrestToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem showBalanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem updateProductToolStripMenuItem;
     }
 }

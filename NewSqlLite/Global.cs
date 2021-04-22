@@ -18,5 +18,12 @@ namespace NewSqlLite
         public static string selectedPassword;
         public static string selectedAllowance;
 
+        public static string selectedProd;
+        public static string selectedISAName;
+        public static string selectedStatus;
+        public static string selectedTransin;
+        public static string selectedIntrate;
+
+
     }
 }
