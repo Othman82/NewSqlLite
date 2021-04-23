@@ -18,9 +18,9 @@ namespace NewSqlLite
             InitializeComponent();
         }
         SQLiteConnection conn;
-        SQLiteDataAdapter da_Customer;  // To retrieve data from a data source and populate tables within a DataSet.
-        DataTable dt_Customer;       // The DataTable class  is a database table representing and provides a collection of columns                            and rows to store data in a grid for
-        SQLiteCommand cmd;
+        SQLiteDataAdapter da_Customer;    // To retrieve data from a data source and populate tables within a DataSet.
+        DataTable dt_Customer;            // The DataTable class  is a database table representing and provides a collection of columns and rows to store data in a grid
+        SQLiteCommand cmd;               // This command is used to work with the SQL 
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -80,9 +80,9 @@ namespace NewSqlLite
             this.Hide();
         }
 
-        private void dgv_customer_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_customer_CellClick(object sender, DataGridViewCellEventArgs e) // Click event when cell clicked somthing to be done 
         {
-            if (e.RowIndex != -1)
+            if (e.RowIndex != -1) // What cell is actually on (when I select somthing I want to do somthing)
             {
                 DataGridViewRow dgvRow = dgv_customer.Rows[e.RowIndex];
                 Global.selectedCust = dgvRow.Cells[0].Value.ToString();
@@ -97,7 +97,7 @@ namespace NewSqlLite
 
             }
 
-            txtCustid.Text = Global.selectedCust;
+            txtCustid.Text = Global.selectedCust;     // Store or display the global variable for the custid when selected 
         }
 
         private void btn_Update_Cust_Click(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace NewSqlLite
             conn.Close();                      //Close connection to the database
         }
 
-        private void dgv_customer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgv_customer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)   // Double click events to show accounts 
         {
             Account frm_accounts = new Account();
             frm_accounts.Show();

@@ -19,8 +19,6 @@ namespace NewSqlLite
         }
 
         SQLiteConnection conn;
-        //SQLiteDataAdapter da_Customer;  // To retrieve data from a data source and populate tables within a DataSet.
-       // DataTable dt_Customer;     // The DataTable class  is a database table representing and provides a collection of columns  and rows to store data in a grid for
         SQLiteCommand cmd;
 
 
@@ -43,50 +41,55 @@ namespace NewSqlLite
                 }
             }
 
-
-
         }
 
         private void ExecuteQuery1(string txtQuery1)
-            {
+        {
             //conn.Open();
-            cmd = conn.CreateCommand();
-                cmd.CommandText = txtQuery1;
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
+            cmd = conn.CreateCommand();                 //Prepare connection for command
+            cmd.CommandText = txtQuery1;                //Prepare command
+            cmd.ExecuteNonQuery();                      // Excute command
+            conn.Close();                              //Close connection
+        }
 
-            private void ExecuteQuery2(string txtQuery2)
-            {
+        private void ExecuteQuery2(string txtQuery2)
+        {
             //conn.Open();
             cmd = conn.CreateCommand();
                 cmd.CommandText = txtQuery2;
                 cmd.ExecuteNonQuery();
                 conn.Close();
-            }
+        }
 
-            private void ExecuteQuery3(string txtQuery3)
-            {
-                //conn.Open();
-                cmd = conn.CreateCommand();
-                cmd.CommandText = txtQuery3;
-                cmd.ExecuteNonQuery();
-                conn.Close();
-            }
 
+        private void ExecuteQuery3(string txtQuery3)
+        {
+            //conn.Open();
+            cmd = conn.CreateCommand();        //Prepare connection for command
+            cmd.CommandText = txtQuery3;      //Prepare command
+            cmd.ExecuteNonQuery();           // Excute command
+            conn.Close();                   //Close connection
+        }
+
+
+        private void btnAccruedCalc_Click(object sender, EventArgs e)
+        {
+            //conn.Open(); // Open connection to the database
+            string txtQuery1 = "UPDATE account SET accrued = accrued + ( balance * (SELECT intrate FROM product WHERE account.prodid = product.prodid)/365.0);";
+            MessageBox.Show("Accrued interest updated", "Accrued interest updated", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            ExecuteQuery1(txtQuery1);
+
+            allAcounts frm_allAccounts = new allAcounts(); // To show the all accounts form with new accrued figures after the calculation 
+            frm_allAccounts.Show();
+            this.Hide();
+               
             
-            private void btnAccruedCalc_Click(object sender, EventArgs e)
-            {
-                //conn.Open(); // Open connection to the database
-                string txtQuery1 = "UPDATE account SET accrued = accrued + ( balance * (SELECT intrate FROM product WHERE account.prodid = product.prodid)/365.0);";
-                MessageBox.Show("Accrued interest updated", "Accrued interest updated", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                ExecuteQuery1(txtQuery1);
-                //ShowAccounts();
-            
 
-            }
-        
-        
+        }
+
+
+
+
     }  
 
   

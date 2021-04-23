@@ -47,8 +47,6 @@ namespace NewSqlLite
         }
 
 
-
-
         private void ShowProduct()
         {
             try

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateCustomer));
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -139,24 +140,28 @@
             // 
             // btnUpdateCustomer
             // 
+            this.btnUpdateCustomer.BackColor = System.Drawing.Color.SteelBlue;
             this.btnUpdateCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(310, 342);
+            this.btnUpdateCustomer.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(297, 342);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
-            this.btnUpdateCustomer.Size = new System.Drawing.Size(60, 30);
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(76, 30);
             this.btnUpdateCustomer.TabIndex = 34;
             this.btnUpdateCustomer.Text = "Update";
-            this.btnUpdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomer.UseVisualStyleBackColor = false;
             this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
             // btnUpdateCancel
             // 
+            this.btnUpdateCancel.BackColor = System.Drawing.Color.SteelBlue;
             this.btnUpdateCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdateCancel.Location = new System.Drawing.Point(395, 342);
+            this.btnUpdateCancel.ForeColor = System.Drawing.Color.SeaShell;
+            this.btnUpdateCancel.Location = new System.Drawing.Point(407, 342);
             this.btnUpdateCancel.Name = "btnUpdateCancel";
-            this.btnUpdateCancel.Size = new System.Drawing.Size(60, 30);
+            this.btnUpdateCancel.Size = new System.Drawing.Size(82, 30);
             this.btnUpdateCancel.TabIndex = 33;
             this.btnUpdateCancel.Text = "Cancel";
-            this.btnUpdateCancel.UseVisualStyleBackColor = true;
+            this.btnUpdateCancel.UseVisualStyleBackColor = false;
             this.btnUpdateCancel.Click += new System.EventHandler(this.btnUpdateCancel_Click);
             // 
             // label1
@@ -233,11 +238,13 @@
             this.txtCustid.ReadOnly = true;
             this.txtCustid.Size = new System.Drawing.Size(71, 20);
             this.txtCustid.TabIndex = 44;
+            this.txtCustid.Visible = false;
             // 
             // UpdateCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleTurquoise;
             this.ClientSize = new System.Drawing.Size(524, 400);
             this.Controls.Add(this.txtCustid);
             this.Controls.Add(this.label9);
@@ -259,6 +266,7 @@
             this.Controls.Add(this.txtLastname);
             this.Controls.Add(this.txtFirstname);
             this.Controls.Add(this.cbTitle);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateCustomer";
             this.Text = "UpdateCustomer";
             this.Load += new System.EventHandler(this.UpdateCustomer_Load);

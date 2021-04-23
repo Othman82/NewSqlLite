@@ -26,8 +26,8 @@ namespace NewSqlLite
 
         private void showAllAccountsToolStripMenuItem_Click(object sender, EventArgs e) // To Call Product form 
         {
-            Product frm_product = new Product();
-            frm_product.Show();
+            Account frm_account = new Account();
+            frm_account.Show();
         }
 
         private void calculateAccruedIntetrestToolStripMenuItem_Click(object sender, EventArgs e) // To call Acrrued Interest calculation form

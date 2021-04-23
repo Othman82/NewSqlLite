@@ -19,8 +19,8 @@ namespace NewSqlLite
         }
 
         SQLiteConnection conn;
-        SQLiteDataAdapter da_Accounts;  // To retrieve data from a data source and populate tables within a DataSet.
-        DataTable dt_Accounts;         // The DataTable class  is a database table representing and provides a collection of column                                and rows to store data in a grid for
+        SQLiteDataAdapter da_Account;  // To retrieve data from a data source and populate tables within a DataSet.
+        DataTable dt_Account;         // The DataTable class  is a database table representing and provides a collection of column                                and rows to store data in a grid for
       
 
         private void Account_Load(object sender, EventArgs e)
@@ -42,25 +42,21 @@ namespace NewSqlLite
                 }
             }
 
-            ShowAccounts();  // if there no errors show all customers 
+            ShowAccount();  // if there no errors show all customers 
         }
 
-        private void ShowAccounts()
+        private void ShowAccount() 
         {
             try
             {
+
                 conn = new SQLiteConnection(dbConnections.source); // reading the database from the source (connection)
                 string sqlcommand = @"SELECT * FROM account WHERE custid ='" + Global.selectedCust + "';";  // getting the content from the database
 
-
-                string sqlcommand2 = @"SELECT accid, customer.title || ' ' || customer.firstname || ' ' || customer.lastname AS Name,
-                product.isaname AS ProductName, balance, accrued, active FROM account INNER JOIN customer ON customer.custid = account.custid 
-                INNER JOIN product ON product.prodid = account.prodid WHERE customer.custid = '" + Global.selectedCust + "';";
-
-                da_Accounts = new SQLiteDataAdapter(sqlcommand2, conn); //  create new data adpater to stor the data base temperorely (using sqlcommand)
-                dt_Accounts = new DataTable(); // create new data  tables
-                da_Accounts.Fill(dt_Accounts); // use the data adpater 
-                dgv_account.DataSource = dt_Accounts;    // populate data grid view with the data from the data table 
+                da_Account = new SQLiteDataAdapter(sqlcommand, conn); //  create new data adpater to stor the data base temperorely (using sqlcommand)
+                dt_Account = new DataTable(); // create new data  tables
+                da_Account.Fill(dt_Account); // use the data adpater 
+                dgv_account.DataSource = dt_Account;    // populate data grid view with the data from the data table 
             }
 
             catch (Exception ex) // incase of error exception message will be showen
@@ -69,6 +65,8 @@ namespace NewSqlLite
 
             }
         }
+
+
 
         private void btnBack_Click(object sender, EventArgs e)
         {

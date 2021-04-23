@@ -41,7 +41,7 @@ namespace NewSqlLite
             }
         }
 
-        private void btnAddCustomer_Click(object sender, EventArgs e)
+        private void btnAddCustomer_Click(object sender, EventArgs e) // This method will allow a customer to be added to the form 
         {
             using (SQLiteCommand cmd = conn.CreateCommand())
             {
@@ -60,7 +60,7 @@ namespace NewSqlLite
                 conn.Close();
 
 
-                MainForm mainform = new MainForm();
+                MainForm mainform = new MainForm();  // After adding the customer user will be back to the MainForm 
                 mainform.Show();
                 this.Hide();
 
@@ -70,7 +70,7 @@ namespace NewSqlLite
 
 
 
-        private void btnAddCancel_Click(object sender, EventArgs e)
+        private void btnAddCancel_Click(object sender, EventArgs e)   // When clicked new customer will be closed and it will go back to MainForm
         {
             MainForm frm_main = new MainForm();
             frm_main.Show();

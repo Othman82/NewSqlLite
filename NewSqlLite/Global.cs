@@ -24,6 +24,14 @@ namespace NewSqlLite
         public static string selectedTransin;
         public static string selectedIntrate;
 
+        public static string selectedAccid;
+        public static string selectedCustid;
+        public static string selectedProdid;
+        public static string selectedBalance;
+        public static string selectedAccrued;
+        public static string selectedActive;
+
+
 
     }
 }

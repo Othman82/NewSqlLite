@@ -85,7 +85,7 @@ namespace NewSqlLite
             this.Hide();
         }
 
-        private void btnUpdateCancel_Click(object sender, EventArgs e)
+        private void btnUpdateCancel_Click(object sender, EventArgs e)  // When cancel button clicked go back to the MainForm
         {
 
             MainForm frm_main = new MainForm();
